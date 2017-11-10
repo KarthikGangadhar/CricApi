@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{This is a ruby wrapper to access cricapi.com live cricket data}
   spec.description   = %q{This is a ruby wrapper to access cricapi.com live cricket data}
   spec.homepage      = "https://github.com/KarthikGangadhar/CricApi"
-  spec.license       = "MIT"
+  spec.license       = ""
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
