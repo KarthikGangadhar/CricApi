@@ -37,7 +37,8 @@ There are five endpoint, Usage is as Follow
 ```
 cricket endpoint, Old Match API 
 
-```ruby    
+```ruby 
+   
     cricapi.cricket
     # => {
   			"ttl": 2,
@@ -55,6 +56,7 @@ cricket endpoint, Old Match API
 schedule endpoint, Match Calender 
     	 
 ```ruby
+
     cricapi.schedule
     # => { 			
   			"data": [
@@ -75,6 +77,7 @@ schedule endpoint, Match Calender
 cricketScore endpoint, This requires a match unique_id, which will be provide by cricket endpoint 
     	 
 ```ruby
+
 	unique_id = "1034809"
     cricapi.cricketScore(unique_id)
     # => {
@@ -116,6 +119,7 @@ matches endpoint, This requires a match unique_id, which will be provide by cric
 playerStats endpoint, This requires a players pid, which will be obtained [here](http://www.cricapi.com/players/) 
     	 
 ```ruby
+
 	pid = "32350"
     cricapi.playerStats(unique_id)
     # => {
@@ -131,7 +135,7 @@ playerStats endpoint, This requires a players pid, which will be obtained [here]
   			"name": "Sachin Tendulkar",
   			"country": "India",
   			"playingRole": "Top-order batsman"
-  		 }
+  		}
   		 	 	    
 ```
 
@@ -143,7 +147,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[karthikgangadhar]/CricApi. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/karthikgangadhar/CricApi. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
