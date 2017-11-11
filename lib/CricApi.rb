@@ -1,30 +1,54 @@
 require "CricApi/version"
-require "CricApi/helper/request"
+require "hashie"
+require "httparty"
 
 module CricApi
+  class Request
+  include HTTParty
+  base_uri 'http://cricapi.com'
   
-  def self.cricket
-    Cricket::Request.new('https://apecricket.herokuapp.com', 0).cricket
+  def initialize(key)
+    @options = { query: {site: "cricapi.com", apikey: key }  }
+  end
+  
+  def cricket
+    response = self.class.get("/api/cricket", @options)
+    cricket = clean_response(response)
+    cricket
   end
 
-  def self.matches
-    Cricket::Request.new('https://apecricket.herokuapp.com', 0).matches
+  def matches
+    response = self.class.get("/api/matches", @options)
+    matches = clean_response(response)
+    matches    
   end
   
-  def self.schedule
-    Cricket::Request.new('https://apecricket.herokuapp.com', 0).matchCalendar
+  def schedule
+    response = self.class.get("/api/matchCalendar", @options)
+    schedule = clean_response(response)
+    schedule
   end
   
-  def self.cricketScore(id)
-    Cricket::Request.new('https://apecricket.herokuapp.com', 0).cricketScore(id)
+  def cricketScore(id)
+    @options[:query][:unique_id] = id
+    response = self.class.post("/api/cricketScore", @options)
+    cricketScore = clean_response(response)
+    cricketScore
   end
   
-  def self.playerStats(pid)
-    Cricket::Request.new('https://apecricket.herokuapp.com', 0).playerStats(pid)
+  def playerStats(pid)
+    @options[:query][:pid] = pid
+    response = self.class.post("/api/playerStats", @options)
+    playerStats = clean_response(response)
+    playerStats
   end
   
-  def self.score(id)
-    Cricket::Request.new('https://apecricket.herokuapp.com', 0).playerStats(id)
+  private
+  
+  def clean_response(response)
+    is_response_present = (response.empty? && response.nil? && response.parsed_response.empty? && response.parsed_response.nil?)
+    is_response_present ? Hashie::Mash.new({ :error => "No data"}) : Hashie::Mash.new( response.parsed_response )
   end
   
+end
 end
