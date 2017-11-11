@@ -31,10 +31,13 @@ There are five endpoint, Usage is as Follow
 
 ```ruby
     require 'CricApi'
-	
-	api_key = "TESTKEY0273"
-    cricapi = CricApi::Request.new(api_key)
     
+    api_key = "TESTKEY0273"
+    cricapi = CricApi::Request.new(api_key)
+```
+cricket endpoint, Old Match API 
+
+```ruby    
     cricapi.cricket
     # => {
   			"ttl": 2,
@@ -47,7 +50,89 @@ There are five endpoint, Usage is as Follow
       						"title": "Mid West Rhinos 213/6 * v Mashonaland Eagles 321/10 "
     					}
     			    ]
-    	 }	    
+    	 }
+```
+schedule endpoint, Match Calender 
+    	 
+```ruby
+    cricapi.schedule
+    # => { 			
+  			"data": [
+    					{
+      						"unique_id": "will generate 1-2 days before match",
+      						"name": "India v Sri Lanka at Kolkata, 1st Test - day 1",
+      					"date": "16 November 2017"
+    					},
+    					{
+      						"unique_id": "will generate 1-2 days before match",
+      						"name": "India v Sri Lanka at Kolkata, 1st Test - day 2",
+      						"date": "17 November 2017"
+    					}
+    			    ]		
+    	 }    	 	    
+```
+
+cricketScore endpoint, This requires a match unique_id, which will be provide by cricket endpoint 
+    	 
+```ruby
+	unique_id = "1034809"
+    cricapi.cricketScore(unique_id)
+    # => {
+  			"matchStarted": true,
+  			"team-1": "England",
+  			"team-2": "India",
+  			"cache": true,
+  			"v": "1",
+  			"ttl": 2,
+  			"provider": {
+    			"source": "Various",
+    			"url": "https://cricapi.com/",
+    			"pubDate": "2017-11-11T06:24:19.712Z"
+  			},
+		}   	 	    
+```
+
+matches endpoint, This requires a match unique_id, which will be provide by cricket endpoint 
+    	 
+```ruby
+    cricapi.matches
+    # => {
+  			"matches": [
+    						{
+      							"unique_id": 1124063,
+      							"date": "2017-11-10T00:00:00.000Z",
+      							"team-2": "Band-e-Amir Region",
+      							"team-1": "Mis Ainak Region",
+      							"type": "First-class",
+      							"dateTimeGMT": "2017-11-07T04:30:00.000Z",
+      							"squad": true,
+      							"toss_winner_team": "Band-e-Amir Region",
+      							"matchStarted": true
+    						} 
+    				   ]
+           }				    	 	    
+```
+
+playerStats endpoint, This requires a players pid, which will be obtained [here](http://www.cricapi.com/players/) 
+    	 
+```ruby
+	pid = "32350"
+    cricapi.playerStats(unique_id)
+    # => {
+  			"pid": 35320,
+  			"profile": "\n\nSachin Tendulkar has been the most complete batsman of his time, the most prolific runmaker of all time, and arguably the biggest cricket icon the game has ever known. His batting was based on the purest principles: perfect balance, economy of movement, precision in stroke-making, and that intangible quality given only to geniuses - anticipation. If he didn't have a signature stroke - the upright, back-foot punch comes close - it's because he was equally proficient at each of the full range of orthodox shots (and plenty of improvised ones as well) and can pull them out at will.  \n\n",
+ 			"imageURL": "http://cricapi.com/playerpic/35320.jpg",
+  			"battingStyle": "Right-hand bat",
+  			"bowlingStyle": "Right-arm offbreak, Legbreak googly",
+  			"majorTeams": "India,Asia XI,Mumbai,Mumbai Indians,Yorkshire",
+  			"currentAge": "44 years 186 days",
+  			"born": "April 24, 1973, Bombay (now Mumbai), Maharashtra",
+  			"fullName": "Sachin Ramesh Tendulkar",
+  			"name": "Sachin Tendulkar",
+  			"country": "India",
+  			"playingRole": "Top-order batsman"
+  		 }
+  		 	 	    
 ```
 
 ## Development
