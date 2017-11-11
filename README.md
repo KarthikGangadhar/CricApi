@@ -37,15 +37,9 @@ There are five endpoint, Usage is as Follow
     
     cricapi.cricket
     # => {
-  			"creditsLeft": 986,
-  			"provider": {
-    		"source": "Various",
-    		"url": "https://cricapi.com/",
-    		"pubDate": "2017-11-11T06:09:26.818Z"
-  			},
-  				"ttl": 2,
-  				"v": "1",
-  				"cache": true,
+  			"ttl": 2,
+  			"v": "1",
+  			"cache": true,
   			"data": [
     					{
       						"unique_id": "1122751",
@@ -53,6 +47,7 @@ There are five endpoint, Usage is as Follow
       						"title": "Mid West Rhinos 213/6 * v Mashonaland Eagles 321/10 "
     					}
     			    ]
+    	 }	    
 ```
 
 ## Development
