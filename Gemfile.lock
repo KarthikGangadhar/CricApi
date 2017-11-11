@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    CricApi (0.1.0)
+    CricApi (0.2.0)
       hashie
       httparty
 
