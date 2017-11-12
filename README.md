@@ -41,16 +41,16 @@ cricket endpoint, Old Match API
    
     cricapi.cricket
     # => {
-  			"ttl": 2,
-  			"v": "1",
-  			"cache": true,
-  			"data": [
-    					{
-      						"unique_id": "1122751",
-      						"description": "Mid West Rhinos 213/6 * v Mashonaland Eagles 321/10 ",
-      						"title": "Mid West Rhinos 213/6 * v Mashonaland Eagles 321/10 "
-    					}
-    			    ]
+  	    "ttl": 2,
+  	    "v": "1",
+  	    "cache": true,
+  	    "data": [
+    		      {
+      			 "unique_id": "1122751",
+      			 "description": "Mid West Rhinos 213/6 * v Mashonaland Eagles 321/10 ",
+      			 "title": "Mid West Rhinos 213/6 * v Mashonaland Eagles 321/10 "
+    		      }
+    	    ]
     	 }
 ```
 schedule endpoint, Match Calender 
@@ -59,18 +59,18 @@ schedule endpoint, Match Calender
 
     cricapi.schedule
     # => { 			
-  			"data": [
-    					{
-      						"unique_id": "will generate 1-2 days before match",
-      						"name": "India v Sri Lanka at Kolkata, 1st Test - day 1",
-      					"date": "16 November 2017"
-    					},
-    					{
-      						"unique_id": "will generate 1-2 days before match",
-      						"name": "India v Sri Lanka at Kolkata, 1st Test - day 2",
-      						"date": "17 November 2017"
-    					}
-    			    ]		
+  	    "data": [
+    		      {
+      			 "unique_id": "will generate 1-2 days before match",
+      			 "name": "India v Sri Lanka at Kolkata, 1st Test - day 1",
+      		         "date": "16 November 2017"
+    		      },
+    		      {
+      			 "unique_id": "will generate 1-2 days before match",
+      			 "name": "India v Sri Lanka at Kolkata, 1st Test - day 2",
+      			 "date": "17 November 2017"
+    		       }
+    		    ]		
     	 }    	 	    
 ```
 
@@ -78,41 +78,41 @@ cricketScore endpoint, This requires a match unique_id, which will be provide by
     	 
 ```ruby
 
-	unique_id = "1034809"
+    unique_id = "1034809"
     cricapi.cricketScore(unique_id)
     # => {
-  			"matchStarted": true,
-  			"team-1": "England",
-  			"team-2": "India",
-  			"cache": true,
-  			"v": "1",
-  			"ttl": 2,
-  			"provider": {
-    			"source": "Various",
-    			"url": "https://cricapi.com/",
-    			"pubDate": "2017-11-11T06:24:19.712Z"
-  			},
-		}   	 	    
+  	    "matchStarted": true,
+  	    "team-1": "England",
+  	    "team-2": "India",
+  	    "cache": true,
+  	    "v": "1",
+  	    "ttl": 2,
+  	    "provider": {
+    		"source": "Various",
+    		"url": "https://cricapi.com/",
+    		"pubDate": "2017-11-11T06:24:19.712Z"
+  	    },
+	}   	 	    
 ```
 
-matches endpoint, This requires a match unique_id, which will be provide by cricket endpoint 
-    	 
+matches endpoint
+
 ```ruby
     cricapi.matches
     # => {
-  			"matches": [
-    						{
-      							"unique_id": 1124063,
-      							"date": "2017-11-10T00:00:00.000Z",
-      							"team-2": "Band-e-Amir Region",
-      							"team-1": "Mis Ainak Region",
-      							"type": "First-class",
-      							"dateTimeGMT": "2017-11-07T04:30:00.000Z",
-      							"squad": true,
-      							"toss_winner_team": "Band-e-Amir Region",
-      							"matchStarted": true
-    						} 
-    				   ]
+  	    "matches": [
+    			 {
+      			    "unique_id": 1124063,
+      			    "date": "2017-11-10T00:00:00.000Z",
+      			    "team-2": "Band-e-Amir Region",
+      			    "team-1": "Mis Ainak Region",
+      			    "type": "First-class",
+      			    "dateTimeGMT": "2017-11-07T04:30:00.000Z",
+      			    "squad": true,
+      			    "toss_winner_team": "Band-e-Amir Region",
+      			    "matchStarted": true
+    			} 
+    		      ]
            }				    	 	    
 ```
 
@@ -120,7 +120,7 @@ playerStats endpoint, This requires a players pid, which will be obtained [here]
     	 
 ```ruby
 
-	pid = "32350"
+    pid = "32350"
     cricapi.playerStats(unique_id)
     # => {
   			"pid": 35320,
