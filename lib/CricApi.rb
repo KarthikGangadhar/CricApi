@@ -43,11 +43,32 @@ module CricApi
     playerStats
   end
   
+  def fantasySummary(unique_id)
+    @options[:query][:unique_id] = unique_id
+    response = self.class.post("api/fantasySummary", @options)
+    summary = clean_response(response)
+    summary
+  end
+  
+  def fantasySquad(unique_id)
+    @options[:query][:unique_id] = unique_id
+    response = self.class.post("api/fantasySquad", @options)
+    squad = clean_response(response)
+    squad
+  end
+  
+  def playerFinder(name)
+    @options[:query][:name] = name
+    response = self.class.post("api/playerFinder", @options)
+    player = clean_response(response)
+    player
+  end   
+  
   private
   
   def clean_response(response)
-    is_response_present = (response.empty? && response.nil? && response.parsed_response.empty? && response.parsed_response.nil?)
-    is_response_present ? Hashie::Mash.new({ :error => "No data"}) : Hashie::Mash.new( response.parsed_response )
+    response_not_present = (response.empty? && response.nil? && response.parsed_response.empty? && response.parsed_response.nil?)
+    response_not_present ? Hashie::Mash.new({ :error => "No data"}) : Hashie::Mash.new( response.parsed_response )
   end
   
 end

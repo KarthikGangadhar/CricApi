@@ -1,8 +1,6 @@
 # CricApi
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/CricApi`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-Delete this and the text above, and describe your gem
+Welcome to cric-api. The live cricket score, player statistics and fantasy scorecard API allow you to get API data anytime, 24x7 at your fingertips. It's extremely simple, easy to use - with a huge collection of examples.
 
 ## Installation
 
