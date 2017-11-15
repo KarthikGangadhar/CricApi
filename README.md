@@ -33,7 +33,7 @@ There are 8 endpoints, Usage is as Follow
     api_key = "TESTKEY0273"
     cricapi = CricApi::Request.new(api_key)
 ```
-cricket endpoint, Old Match API 
+#### cricket endpoint, Old Match API #### 
 
 ```ruby 
    
@@ -51,7 +51,7 @@ cricket endpoint, Old Match API
     	    ]
     	 }
 ```
-schedule endpoint, Match Calender 
+#### schedule endpoint, Match Calender ####
     	 
 ```ruby
 
@@ -72,7 +72,7 @@ schedule endpoint, Match Calender
     	 }    	 	    
 ```
 
-cricketScore endpoint, This requires a match unique_id, which will be provide by cricket endpoint 
+#### cricketScore endpoint ####, This requires a match unique_id, which will be provide by cricket endpoint 
     	 
 ```ruby
 
@@ -93,7 +93,7 @@ cricketScore endpoint, This requires a match unique_id, which will be provide by
 	}   	 	    
 ```
 
-matches endpoint
+#### matches endpoint ####
 
 ```ruby
     cricapi.matches
@@ -114,7 +114,7 @@ matches endpoint
            }				    	 	    
 ```
 
-playerStats endpoint, This requires a players pid, which will be obtained [here](http://www.cricapi.com/players/) 
+#### playerStats endpoint, #### This requires a players pid, which will be obtained [here](http://www.cricapi.com/players/) 
     	 
 ```ruby
 
@@ -140,7 +140,7 @@ playerStats endpoint, This requires a players pid, which will be obtained [here]
 The remaining 3 are Fantasy API endpoints, Fantasy API are billable since they're designed to help you generate income by running Fantasy Cricket portals. 
 Each hit is 1 credit. You get 250 credits free. Deducted from your prepaid account. 
 
-fantasySummary endpoint, This requires a match unique_id, which will be provide by cricket endpoint 
+#### fantasySummary endpoint, #### This requires a match unique_id, which will be provide by cricket endpoint 
     	 
 ```ruby
 
@@ -160,8 +160,8 @@ fantasySummary endpoint, This requires a match unique_id, which will be provide 
 			"players: [...]
 		}]
 	 }
+	 
 	#Inning-wise, Player-wise array of Batting scores of the format:
-
 
 	[{
 		"title": "Gloucestershire 1st innings",
@@ -178,11 +178,52 @@ fantasySummary endpoint, This requires a match unique_id, which will be provide 
 				"SR": "53.84"                  // -----------------> Strike Rate / 100 Balls
 			}, ... ]
 		]
-}, {
-	"title": "Gloucestershire 2nd innings",
-    "scores": [ ... ]
-}, ...]   	
+	}, {
+		"title": "Gloucestershire 2nd innings",
+    	"scores": [ ... ]
+	}, ...]   	
 	  	    
+	#Inning-wise, Player-wise array of Bowling scores of the format:
+	
+	[{
+		"title": "Bowling",
+		"scores": [
+			[{
+				"pid": "6903",                  // -----------------> Use this with playerStats CricAPI for more info
+				"bowler": "CJ McKay",
+				"O": "11",                  // -----------------> Overs bowled (decimal value)
+				"M": "1",                  // -----------------> Maidens bowled
+				"R": "42",                  // -----------------> Runs conceded
+				"W": "1",                  // -----------------> Wickets taken
+				"Econ": "3.81",                  // -----------------> Economy of runs per 6 balls
+				"0s": "48"                  // -----------------> Dot balls bowled
+			}, ... ]
+		]
+			}, {
+		"title": "Bowling",
+    	"scores": [ ... ]
+	}, ...]
+	
+	#Inning-wise, Player-wise array of Fielding scores of the format:
+	
+	[{
+		"title": "Fielding",
+		"scores": [
+			[{
+				"pid": "6903",                  // -----------------> Use this with playerStats CricAPI for more info
+				"name": "CJ McKay",
+				"catch": 3,                  // -----------------> Catches
+				"lbw": 4,                  // -----------------> LBWs
+				"stumped": 2,                  // -----------------> Stumped
+				"bowled": 0                  // -----------------> Bowled
+			}, ... ]
+		]
+	}, {
+		"title": "Fielding",
+    	"scores": [ ... ]
+	}, ...]
+	
+	 
 ```
 
 fantasySquad endpoint, This requires a match unique_id, which will be provide by cricket endpoint 
