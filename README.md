@@ -246,7 +246,7 @@ This takes player name as input
       				"name": "Sachin Tendulkar"
     			  }
   			]
-  	 }		
+    }		
                                               	
 	  	    
 ```
