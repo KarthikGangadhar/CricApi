@@ -72,7 +72,7 @@ There are 8 endpoints, Usage is as Follow
     	 }    	 	    
 ```
 
-#### cricketScore endpoint ####, This requires a match unique_id, which will be provide by cricket endpoint 
+#### cricketScore endpoint, #### This requires a match unique_id, which will be provide by cricket endpoint 
     	 
 ```ruby
 
@@ -137,8 +137,8 @@ There are 8 endpoints, Usage is as Follow
   		 	 	    
 ```
 
-The remaining 3 are Fantasy API endpoints, Fantasy API are billable since they're designed to help you generate income by running Fantasy Cricket portals. 
-Each hit is 1 credit. You get 250 credits free. Deducted from your prepaid account. 
+#### The remaining 3 are Fantasy API endpoints, Fantasy API are billable since they're designed to help you generate income by running Fantasy Cricket portals. ####
+#### Each hit is 1 credit. You get 250 credits free. Deducted from your prepaid account. ####
 
 #### fantasySummary endpoint, #### This requires a match unique_id, which will be provide by cricket endpoint 
     	 
@@ -226,24 +226,41 @@ Each hit is 1 credit. You get 250 credits free. Deducted from your prepaid accou
 	 
 ```
 
-fantasySquad endpoint, This requires a match unique_id, which will be provide by cricket endpoint 
+#### fantasySquad endpoint, #### This requires a match unique_id, which will be provide by cricket endpoint 
     	 
 ```ruby
 
     unique_id = "1034809"
     cricapi.fantasySquad(unique_id)
-    # => {
-  	    	"team": [{
-			"name": "Gloucestershire",
-			"players": [{ // active batsmen/bowlers/fielders only
-			"pid": "298564",
-			"name": "WA Tavare"
-		}, ... ]
-		}, {
-			"name": "Leicestershire",
-			"players: [...]
-		}]
-	 }  	
+    # => 
+    #Array of Squad entries in the format: 
+     
+    {
+		"name": "Sachin Tendulkar", 
+		"pid": 35320
+	}
+                                              	
+	  	    
+```
+#### playerFinder endpoint, #### This takes player name as input
+    	 
+```ruby
+
+    name = "Tendulkar"
+    cricapi.fantasySquad(name)
+    # => 
+    #Array of players in the format: 
+     
+    {
+  		"data": [
+    			  {
+      				"pid": 35320,
+      				"fullName": "Sachin Ramesh Tendulkar",
+      				"name": "Sachin Tendulkar"
+    			  }
+  			]
+  	 }		
+                                              	
 	  	    
 ```
 
