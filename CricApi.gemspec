@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["kgangadhar"]
   spec.email         = ["karthikg1643@gmail.com"]
 
-  spec.summary       = %q{This is a ruby wrapper to access cricapi.com live cricket data}
-  spec.description   = %q{This is a ruby wrapper to access cricapi.com live cricket data}
+  spec.summary       = %q{Welcome to cric-api. The live cricket score, player statistics and fantasy scorecard API allow you to get API data anytime, 24x7 at your fingertips. It's extremely simple, easy to use - with a huge collection of examples.}
+  spec.description   = %q{Welcome to cric-api. The live cricket score, player statistics and fantasy scorecard API allow you to get API data anytime, 24x7 at your fingertips. It's extremely simple, easy to use - with a huge collection of examples.}
   spec.homepage      = "https://github.com/KarthikGangadhar/CricApi"
   spec.license       = ""
 

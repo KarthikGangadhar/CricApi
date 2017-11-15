@@ -3,7 +3,7 @@ require 'spec_helper'
 describe CricApi do
  
   before(:all) do
-    @output = CricApi::Request.new("yiPB2mqlqdNnPa57Vs8P8S74DXk1")
+    @output = CricApi::Request.new("TESTKEY0273")
     @data = @output.cricket.data
   end
   
@@ -45,6 +45,22 @@ describe CricApi do
       expect(playerStats.pid.to_s).to eq("35320")
     end
 
-  end  
+  end
+  
+  describe '#fantasySummary' do
+    it 'returns fantasySummary data' do
+      fantasySummary = @output.fantasySummary(@data[0].unique_id)
+      expect(fantasySummary.error).not_to be(nil)
+    end
+
+  end
+  
+  describe '#playerFinder' do
+    it 'returns playerFinder data' do
+      playerFinder = @output.playerFinder("tendulkar")
+      expect(playerFinder.error).not_to be(nil)
+    end
+
+  end       
   
 end
