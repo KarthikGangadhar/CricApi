@@ -72,7 +72,8 @@ There are 8 endpoints, Usage is as Follow
     	 }    	 	    
 ```
 
-#### cricketScore endpoint, #### This requires a match unique_id, which will be provide by cricket endpoint 
+#### cricketScore endpoint, 
+This requires a match unique_id, which will be provide by cricket endpoint 
     	 
 ```ruby
 
@@ -114,7 +115,8 @@ There are 8 endpoints, Usage is as Follow
            }				    	 	    
 ```
 
-#### playerStats endpoint, #### This requires a players pid, which will be obtained [here](http://www.cricapi.com/players/) 
+#### playerStats endpoint, 
+This requires a players pid, which will be obtained [here](http://www.cricapi.com/players/) 
     	 
 ```ruby
 
@@ -139,7 +141,8 @@ There are 8 endpoints, Usage is as Follow
 
  The remaining 3 are Fantasy API endpoints, Fantasy API are billable since they're designed to help you generate income by running Fantasy Cricket portals. Each hit is 1 credit. You get 250 credits free. Deducted from your prepaid account. 
 
-#### fantasySummary endpoint, #### This requires a match unique_id, which will be provide by cricket endpoint 
+#### fantasySummary endpoint,
+This requires a match unique_id, which will be provide by cricket endpoint 
     	 
 ```ruby
 
@@ -225,7 +228,8 @@ There are 8 endpoints, Usage is as Follow
 	 
 ```
 
-#### fantasySquad endpoint, #### This requires a match unique_id, which will be provide by cricket endpoint 
+#### fantasySquad endpoint.
+This requires a match unique_id, which will be provide by cricket endpoint 
     	 
 ```ruby
 
@@ -241,7 +245,8 @@ There are 8 endpoints, Usage is as Follow
                                               	
 	  	    
 ```
-#### playerFinder endpoint, #### This takes player name as input
+#### playerFinder endpoint
+This takes player name as input
     	 
 ```ruby
 
