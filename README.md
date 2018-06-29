@@ -33,7 +33,7 @@ There are 8 endpoints, Usage is as Follow
     api_key = "TESTKEY0273"
     cricapi = CricApi::Request.new(api_key)
 ```
-####cricket endpoint, Old Match API#### 
+#### cricket endpoint 
 
 ```ruby 
    
@@ -51,7 +51,7 @@ There are 8 endpoints, Usage is as Follow
     	    ]
     	 }
 ```
-####schedule endpoint, Match Calender####
+#### schedule endpoint
     	 
 ```ruby
 
@@ -72,7 +72,7 @@ There are 8 endpoints, Usage is as Follow
     	 }    	 	    
 ```
 
-####cricketScore endpoint####, 
+#### cricketScore endpoint
 This requires a match unique_id, which will be provide by cricket endpoint 
     	 
 ```ruby
@@ -94,7 +94,7 @@ This requires a match unique_id, which will be provide by cricket endpoint
 	}   	 	    
 ```
 
-####matches endpoint####
+#### matches endpoint
 
 ```ruby
     cricapi.matches
@@ -115,7 +115,7 @@ This requires a match unique_id, which will be provide by cricket endpoint
            }				    	 	    
 ```
 
-#### playerStats endpoint, 
+#### playerStats endpoint 
 This requires a players pid, which will be obtained [here](http://www.cricapi.com/players/) 
     	 
 ```ruby
@@ -260,26 +260,26 @@ This requires a match unique_id, which will be provide by cricket endpoint
     cricapi.fantasySquad(unique_id)	
     # => 	
     #Array of Squad entries in the format: 		
-			{
-			  "squad": [
-			    {
-			      "name": "Ireland Women",
-			      "players": [
-			        {
-			          "pid": 1150585,
-			          "name": "Orla Prendergast"
-			        },
-			        {
-			          "pid": 418420,
-			          "name": "Laura Delany"
-			        },
-			        {
-			          "pid": 418423,
-			          "name": "Kim Garth"
-					}
-				}	
-			  ]
-			}                                    		
+	{
+	  "squad": [
+	    {
+	      "name": "Ireland Women",
+	      "players": [
+	        {
+	          "pid": 1150585,
+	          "name": "Orla Prendergast"
+	        },
+	        {
+	          "pid": 418420,
+	          "name": "Laura Delany"
+	        },
+	        {
+	          "pid": 418423,
+	          "name": "Kim Garth"
+			}
+		}	
+	]
+	}                                    		
 	  	    	
 ```
 
