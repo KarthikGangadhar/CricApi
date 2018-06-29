@@ -49,7 +49,14 @@ module CricApi
     summary = clean_response(response)
     summary
   end
-  
+
+  def fantasySquad(unique_id)	
+    @options[:query][:unique_id] = unique_id	
+    response = self.class.post("/api/fantasySquad", @options)	
+    squad = clean_response(response)	
+    squad	
+  end
+
   def playerFinder(name)
     @options[:query][:name] = name
     response = self.class.post("/api/playerFinder", @options)

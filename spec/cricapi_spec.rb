@@ -50,17 +50,23 @@ describe CricApi do
   describe '#fantasySummary' do
     it 'returns fantasySummary data' do
       fantasySummary = @output.fantasySummary(@data[0].unique_id)
-      expect(fantasySummary.error).not_to be(nil)
+      expect(fantasySummary.data).not_to be(nil)
     end
-
   end
-  
+
+  describe '#fantasySquad' do
+    it 'returns fantasySquad data' do
+      fantasySquad = @output.fantasySquad(@data[0].unique_id)
+      expect(fantasySquad.squad.length).to be > 0
+    end
+  end  
+
+
   describe '#playerFinder' do
     it 'returns playerFinder data' do
       playerFinder = @output.playerFinder("tendulkar")
-      expect(playerFinder.error).not_to be(nil)
+      expect(playerFinder.data.length).to be > 0
     end
-
   end       
   
 end
