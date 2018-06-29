@@ -164,7 +164,7 @@ This takes player name as input
 
  The remaining 2 are Fantasy API endpoints, Fantasy API are billable since they're designed to help you generate income by running Fantasy Cricket portals. Each hit is 1 credit. You get 250 credits free. Deducted from your prepaid account. 
 
-#### fantasySummary endpoint,
+#### fantasySummary endpoint
 This requires a match unique_id, which will be provide by cricket endpoint 
     	 
 ```ruby
@@ -251,7 +251,7 @@ This requires a match unique_id, which will be provide by cricket endpoint
 	 
 ```
 
-#### fantasySquad endpoint.	
+#### fantasySquad endpoint	
 This requires a match unique_id, which will be provide by cricket endpoint 	
     	 	
 ```ruby	
